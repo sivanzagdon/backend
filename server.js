@@ -20,19 +20,34 @@ mongoose
 //const UserModel = require("./models/UserModel");
 
 //var user = new UserModel({
- // firstName: "sivan",
- // lastName: "zg",
- // email: "sivan@gmail.com",
- // password: "4567",
+  //firstName: "shahar",
+  //lastName: "musan",
+  //email: "shahar.musan@gmail.com",
+  //password: "1234",
 //});
 //user.save()
 
-const ProductModel = require("./models/ProductModel");
+//const ProductModel = require("./models/ProductModel");
 
-var product = new ProductModel({
-  productName: "ring",
-  productID: "1234",
-  pricePerUnit: "89",
-  nnn: "rrr"
+//var product = new ProductModel({
+  //productName: "Seifan Bracelate",
+  //productID: "D006",
+  //pricePerUnit: "15000$",
+  //categoty: "bracelate"
+//});
+//product.save();
+
+const OrdersModel = require("./models/OrdersModel");
+
+var Orders = new OrdersModel({
+  
+    UserName:"sivan hod",
+    OrdersID: "O002",
+    Totalprice:"10000$",
+    Orderdate: "11/6/23",
+    Orderproduct :"jkdsjhjds,dhdhdhd,dhdhdhd",
+    Totalproduct: "2",
+    
+ 
 });
-product.save();
+Orders.save();

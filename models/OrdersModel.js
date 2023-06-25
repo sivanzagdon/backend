@@ -2,10 +2,12 @@ var mongoose = require("mongoose");
 
 var OrdersModel = new mongoose.Schema(
   {
-    OrdersName: { type: String, required: true },
+    UserName: { type: String, required: true },
     OrdersID: { type: String, required: true },
     Totalprice: { type: String, required: true },
-    n: { type: String, required: true },
+    Orderdate: { type: String, required: true },
+    Orderproduct: { type: String, required: true },
+    Totalproduct: { type: String, required: true },
   },
   { timestamps: true }
 );
