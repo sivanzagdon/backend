@@ -17,15 +17,15 @@ mongoose
     }
   );
 
-//const UserModel = require("./models/UserModel");
+const UserModel = require("./models/UserModel");
 
-//var user = new UserModel({
-  //firstName: "shahar",
-  //lastName: "musan",
-  //email: "shahar.musan@gmail.com",
-  //password: "1234",
-//});
-//user.save()
+var user = new UserModel({
+  firstName: "hod",
+  lastName: "haim",
+  email: "hod123@gmail.com",
+  password: "1129",
+});
+user.save()
 
 //const ProductModel = require("./models/ProductModel");
 
@@ -37,17 +37,17 @@ mongoose
 //});
 //product.save();
 
-const OrdersModel = require("./models/OrdersModel");
+//const OrdersModel = require("./models/OrdersModel");
 
-var Orders = new OrdersModel({
+//var Orders = new OrdersModel({
   
-    UserName:"sivan hod",
-    OrdersID: "O002",
-    Totalprice:"10000$",
-    Orderdate: "11/6/23",
-    Orderproduct :"jkdsjhjds,dhdhdhd,dhdhdhd",
-    Totalproduct: "2",
+   // UserName:"sivan hod",
+    //OrdersID: "O002",
+   // Totalprice:"10000$",
+   // Orderdate: "11/6/23",
+   // Orderproduct :"jkdsjhjds,dhdhdhd,dhdhdhd",
+   // Totalproduct: "2",
     
  
-});
-Orders.save();
+//});
+//Orders.save();
