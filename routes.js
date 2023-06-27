@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 
-////
+/////////////////////
 router.get('/Earrings', (req, res) => {
   res.sendFile('frontEnd/Earrings.html');
 });
