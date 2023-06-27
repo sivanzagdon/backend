@@ -30,9 +30,9 @@ mongoose
 const ProductModel = require("./models/ProductModel");
 
 var product = new ProductModel({
-  productName: "Tom Earrings",
-  productID: "A008",
-  pricePerUnit: "1500$",
+  productName: "Dan Earrings",
+  productID: "A010",
+  pricePerUnit: "3500$",
   categoty: "Earrings",
 });
 product.save();
