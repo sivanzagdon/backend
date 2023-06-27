@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(backimage.jpg);
+    background-size: cover;
+    width: 100%;
+    margin: 70px auto 0;
+    text-align: center;
+    color: #fff;
+    overflow-y: scroll;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 160px;
+    cursor: pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: #e85d9e;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    margin: 70px auto 0;
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.content p {
+    margin: 10px auto;
+    margin-top: 10px;
+    font-weight: 100;
+    line-height: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.collection {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ring-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    max-width: 300px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: 50%;
+}
+
+.ring-card img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.ring-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.ring-card p {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #e85d9e;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0;
+    background: #e85d9e;
+    border-radius: 25px;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+    background-color: #e85d9e;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e85d9e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.ring-card:hover .preview-image {
+    display: block;
+}
+
+.ring-card .preview-image {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: auto;
+    max-width: 300px;
+    opacity: 1;
+    z-index: 2;
+}
+
+.ring-card:nth-child(1):hover .preview-image {
+    background-image: url(ring2.jpeg);
+}
+
+.ring-card:nth-child(2):hover .preview-image {
+    background-image: url(ring4.jpeg);
+}
+
+.ring-card:nth-child(3):hover .preview-image {
+    background-image: url(ring6.jpg);
+}
+
+.ring-card:nth-child(4):hover .preview-image {
+    background-image: url(ring8.jpeg);
+    width: 70%;
+}
+
+.ring-card:nth-child(5):hover .preview-image {
+    background-image: url(ring10.jpeg);
+
+}
+
+.ring-card:nth-child(6):hover .preview-image {
+    background-image: url(ring12.jpg);
+
+}
