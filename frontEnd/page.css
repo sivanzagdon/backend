@@ -137,3 +137,7 @@ button:hover {
     font-weight: 900;
     font-style: normal;
 }
+
+button.new {
+    margin-top: -10px;
+}
