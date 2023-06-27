@@ -17,25 +17,25 @@ mongoose
     }
   );
 
-const UserModel = require("./models/UserModel");
+//const UserModel = require("./models/UserModel");
 
-var user = new UserModel({
-  firstName: "hod",
-  lastName: "haim",
-  email: "hod123@gmail.com",
-  password: "1129",
-});
-user.save()
-
-//const ProductModel = require("./models/ProductModel");
-
-//var product = new ProductModel({
-  //productName: "Seifan Bracelate",
-  //productID: "D006",
-  //pricePerUnit: "15000$",
-  //categoty: "bracelate"
+//var user = new UserModel({
+  //firstName: "hod",
+ // lastName: "haim",
+ // email: "hod123@gmail.com",
+ // password: "1129",
 //});
-//product.save();
+// user.save()
+
+const ProductModel = require("./models/ProductModel");
+
+var product = new ProductModel({
+  productName: "Tom Earrings",
+  productID: "A008",
+  pricePerUnit: "1500$",
+  categoty: "Earrings",
+});
+product.save();
 
 //const OrdersModel = require("./models/OrdersModel");
 
