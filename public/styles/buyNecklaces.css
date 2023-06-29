@@ -9,7 +9,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(backimage.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../image/backimage.jpg);
     background-size: cover;
     width: 100%;
     margin: 70px auto 0;
@@ -17,6 +17,7 @@
     color: #fff;
     overflow-y: scroll;
     margin: 0 auto;
+
 }
 
 .banner-background {
@@ -211,29 +212,29 @@ button:hover {
 }
 
 .ring-card:nth-child(1):hover .preview-image {
-    background-image: url(ring2.jpeg);
+    background-image: url(./necklacesImage/neck2.jpg);
 }
 
 .ring-card:nth-child(2):hover .preview-image {
-    background-image: url(ring4.jpeg);
+    background-image: url(./necklacesImage/neck4.jpeg);
 }
 
 .ring-card:nth-child(3):hover .preview-image {
-    background-image: url(ring6.jpg);
+    background-image: url(./necklacesImage/neck6.jpeg);
 }
 
 .ring-card:nth-child(4):hover .preview-image {
-    background-image: url(ring8.jpeg);
+    background-image: url(./necklacesImage/neck8.jpg);
     width: 70%;
 }
 
 .ring-card:nth-child(5):hover .preview-image {
-    background-image: url(ring10.jpeg);
+    background-image: url(necklacesImage/neck10.jpeg);
 
 }
 
 .ring-card:nth-child(6):hover .preview-image {
-    background-image: url(ring12.jpg);
+    background-image: url(necklacesImage/neck12.jpeg);
 
 }
 

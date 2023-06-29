@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Ring Shop</title>
-    <link rel="stylesheet" href="../styles/page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<style>
-   * {
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -147,42 +137,4 @@ button:hover {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-style: normal;
-} 
-</style>
-</head>
-
-<body>
-    <div class="pink-bar">
-        <p class="free-shipping">Free Shipping on Orders Over $500</p>
-    </div>
-    <div class="banner">
-        <div class="navbar">
-            <img src="../image/updatelogo.png" class="logo">
-            <ul>
-                <li><a href="/page">Home</a> </li>
-                <li><a href="/necklace">Necklaces</a> </li>
-                <li><a href="/ring">Rings</a> </li>
-                <li><a href="/bracelate">Bracelets</a> </li>
-                <li><a href="/Earrings">Earrings</a> </li>
-                <li><a href="/cart"><i class="fas fa-shopping-cart"></i></a></li>
-
-            </ul>
-        </div>
-        <div class="content">
-            <h1>Ring Shop</h1>
-            <p>Find the perfect ring for any occasion<br>Our rings are made only from white or yellow gold-
-                14k/24k of your choice.<br>
-                They are handcrafted with precision, and there is an option to add natural diamonds!</p>
-            <div>
-                <a href="/buyRing">
-                    <a href="/ringformen"><button type="button"><span></span>Men</button></a>
-                    <a href="/buyRing"><button type="button"><span></span>Women</button></a>
-
-                </a>
-            </div>
-
-        </div>
-    </div>
-</body>
-
-</html>
+}

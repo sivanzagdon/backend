@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(backimage.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../image/backimage.jpg);
     background-size: cover;
     background-position: center;
     width: 100vw;
@@ -151,8 +151,8 @@ button:hover {
     padding: 0.6em;
     border: none;
     outline: none;
-    color: gray;
-    background-color: #333;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0.8;
 }
 
@@ -161,7 +161,7 @@ button:hover {
     border: none;
     outline: none;
     width: 100%;
-    color: gray;
+    color: #d3d3d3;
 }
 
 .form .btn {
@@ -216,6 +216,10 @@ button:hover {
     justify-content: flex-end;
 }
 
+#heading {
+    color: white;
+}
+
 .login {
     display: flex;
     flex-direction: column;
@@ -263,43 +267,5 @@ button:hover {
     content: "\f07a";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    padding-right: 0.5em;
-    margin-left: -0.5em;
-}
-
-.table-responsive-sm {
-    max-width: 100%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    overflow: auto;
-}
-
-.table-bordered {
-    width: max-content;
-    margin: 0 auto;
-    /* להסיר את הערך margin-bottom: 1rem; */
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-}
-
-.table-bordered th,
-.table-bordered td {
-    padding: 0.75rem;
-    vertical-align: middle;
-    border-top: none;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-    border-bottom-width: none;
-}
-
-@media (max-width: 767px) {
-    .table-responsive-sm {
-        overflow: auto;
-    }
+    font-style: normal;
 }
