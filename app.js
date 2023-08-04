@@ -1,7 +1,8 @@
 require("dotenv").config();
-const db = require("mongoose");
+const mongoose = require("mongoose");
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser'); // Require the body-parser module
 
 const path = require("path");
 const router = require("./routes");
@@ -24,11 +25,9 @@ const createApp = async function () {
   );
   console.log("App Created !");
 
-  await db.connect(
-    "mongodb+srv://sivan0252:YDucINw2cGRBs19I@cluster0.nj84cuz.mongodb.net/",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  );
-  console.log("Database Connected!");
+ 
+
+
 
   // Set up the app configuration
   app.set("port", process.env.PORT || 3000);
@@ -118,14 +117,15 @@ const createApp = async function () {
     res.render("success");
   });
 
-  const Users=require('../Backend/models/UserModel');
+  const User = require('../Backend/models/UserModel');
+  app.use(bodyParser.urlencoded({ extended: true })); // Use the bodyParser.urlencoded middleware
 
   app.post("/register", async (req, res) => {
     try {
-      const { firstName, lastName, email, password } = req.body;
+      const { username, email, password } = req.body;
 
       // Check if a user with the same email already exists
-      const existingUser = await user.findOne({ email });
+      const existingUser = await User.findOne({ email: email });
 
       if (existingUser) {
         // If a user with the same email already exists, send a response indicating the conflict
@@ -139,11 +139,9 @@ const createApp = async function () {
 
       // Generate a unique numeric ID for the user
       const id = lastUser ? lastUser.id + 1 : 1;
-      console.log("Hii")
       // Create a new user object
-      const user = new user({
-        firstName,
-        lastName,
+      const user = new ser({
+        username,
         email,
         password,
       });
@@ -162,9 +160,16 @@ const createApp = async function () {
   return app;
 };
 
-const PORT = process.env.PORT || 3000;
 
-createApp()
+const PORT = process.env.PORT || 3000;
+const MONGODB_URL = process.env.MONGODB_URL + process.env.DB_NAME;
+
+
+mongoose
+.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => {
+  console.log("Connected to MongoDB successfully");
+  createApp()
   .then((app) => {
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}`);
@@ -173,3 +178,9 @@ createApp()
   .catch((error) => {
     console.log("Error starting the server:", error);
   });
+
+})
+.catch((err) => {
+  console.error("Failed to connect to MongoDB");
+  console.log(err);
+});
