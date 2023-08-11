@@ -284,3 +284,13 @@ button:hover {
     margin: 0;
     text-align: center;
 }
+
+.col {
+    color: #c0b2b8;
+}
+
+.banner {
+    display: grid;
+    place-items: center;
+    /* נשמור את שאר העיצוב שלך כפי שהוא */
+}

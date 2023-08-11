@@ -5,18 +5,16 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser'); // Require the body-parser module
 
 const path = require("path");
-const router = require("./routes");
+
 const load_routes = function (app) {
-  app.use(require("../backend/routes/users"));
-  app.use(require("../backend/routes/items"));
-  app.use(require("../backend/routes/carts"));
-  app.use(express.static("public"));
+  app.use(express.static('public'));
 };
 
 const createApp = async function () {
   const app = express();
   app.use(express.json());
   app.use(cookieParser());
+  app.use(bodyParser());
   app.use(express.static(path.join(process.cwd(), "./frontEnd")));
   // Serve static images
   app.use(
@@ -117,39 +115,48 @@ const createApp = async function () {
     res.render("success");
   });
 
-  const User = require('../Backend/models/UserModel');
-  app.use(bodyParser.urlencoded({ extended: true })); // Use the bodyParser.urlencoded middleware
+  //Routes:
+  app.use("/", require("./Server/Routes/customer"));
+
+  //Handle 404:
+  app.get("*", (req, res) => {
+    res.status(404).render("404");
+  });
+
+
+
+  const User = require("./Server/models/UserModel");
 
   app.post("/register", async (req, res) => {
     try {
       const { username, email, password } = req.body;
 
-      // Check if a user with the same email already exists
+      //Check if a user with the same email already exists
       const existingUser = await User.findOne({ email: email });
 
       if (existingUser) {
-        // If a user with the same email already exists, send a response indicating the conflict
+        //If a user with the same email already exists, send a response indicating the conflict
         return res
           .status(409)
           .send("<h1> User with this email already exists </h1>");
       }
 
-      // Retrieve the last user from the database
+      //Retrieve the last user from the database
       const lastUser = await User.findOne({}, {}, { sort: { id: -1 } });
 
-      // Generate a unique numeric ID for the user
+      //Generate a unique numeric ID for the user
       const id = lastUser ? lastUser.id + 1 : 1;
-      // Create a new user object
-      const user = new ser({
+      //Create a new user object
+      const user = new User({
         username,
         email,
         password,
       });
 
-      // Save the user to the database
+      //Save the user to the database
       await user.save();
 
-      // Redirect to the home page or display a success message
+      //Redirect to the home page or display a success message
       res.redirect("/");
     } catch (error) {
       console.log("Error registering user:", error);
