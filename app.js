@@ -157,7 +157,7 @@ const createApp = async function () {
       await user.save();
 
       //Redirect to the home page or display a success message
-      res.redirect("/");
+      res.redirect("/success");
     } catch (error) {
       console.log("Error registering user:", error);
       res.status(500).send("Internal Server Error");
